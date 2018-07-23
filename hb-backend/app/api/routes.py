@@ -32,7 +32,6 @@ def get_all():
     return response
 
 
-# NOT NEEDED ?
 @bp.route('/edit_user', methods=['PUT'])
 def edit_user():
     return "EDITED"
