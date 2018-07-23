@@ -1,0 +1,25 @@
+{
+    "questions": [
+      {
+        "body": "Are you signing up for yourself?",
+        "type": "boolean"
+      },
+      {
+        "body": "Whats your name?",
+        "type": "text"
+      },
+      {
+        "body": "Whats your age?",
+        "type": "text"
+      },
+      {
+        "body": "What do you need or want to help with? Select 1: smoking, drinking, fitness, health",
+        "type": "text"
+      },
+      {
+        "body": "Do you want to mentor?",
+        "type": "boolean"
+      }
+    ],
+    "title": "Flask"
+  }

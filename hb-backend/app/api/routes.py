@@ -16,11 +16,19 @@ def add_user():
     return response
 
 
-@bp.route('/get_user/phone_no', methods=['GET'])
+@bp.route('/get_user/<phone_no>', methods=['GET'])
 def get_user(phone_no):
     user = User.query.filter_by(phone_no=phone_no).first()
     response = jsonify(user.to_dict())
     response.status_code = 200
+    return response
+
+
+@bp.route('/get_all', methods=['GET'])
+def get_all():
+    users = User.to_collection_dict(User.query)
+    response = jsonify(users)
+    response.status_code = 201
     return response
 
 
@@ -30,7 +38,7 @@ def edit_user():
     return "EDITED"
 
 
-@bp.route('/del_user/phone_no', methods=['DELETE'])
+@bp.route('/del_user/<phone_no>', methods=['DELETE'])
 def del_user(phone_no):
     user = User.query.filter_by(phone_no=phone_no).first()
     db.session.delete(user)

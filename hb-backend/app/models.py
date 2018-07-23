@@ -6,7 +6,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), index=True)
     age = db.Column(db.Integer)
-    phone_no = db.Column(db.Integer, index=True)
+    phone_no = db.Column(db.String(13), index=True)
 
     @staticmethod
     def to_collection_dict(query):
